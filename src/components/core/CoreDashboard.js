@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Box, Container, makeStyles } from "@material-ui/core";
-import Navbar from "../navbar/navbar";
-import { KeyboardArrowRight } from "@material-ui/icons";
-import MessageCard from "./MessageCard";
-import Grid from '@material-ui/core/Grid';
+import { Box, Container, makeStyles } from '@material-ui/core';
+import Navbar from '../navbar/navbar';
+import { KeyboardArrowRight } from '@material-ui/icons';
+import MessageCard from './MessageCard';
 
 const useStyles = makeStyles((theme) => ({
   headerBox: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     width: '90%',
     fontSize: '24px',
-    paddingLeft: '1%'
+    paddingLeft: '1%',
   },
   msgNumberText: {
     margin: 0,
@@ -37,23 +36,25 @@ const Dashboard = (messages) => {
       {/*Nav Bar*/}
       <Navbar navHeading="Core Dashboard" />
       {/*Header*/}
-      <Container className={ classes.headerBox }>
-        <p className={ classes.headerText }>Messages to review</p>
-        <Box display='flex'>
-          <p className={ classes.msgNumberText }>{ msgPage }</p>
-          <KeyboardArrowRight style={{ color: "white" }}/>
+      <Container className={classes.headerBox}>
+        <p className={classes.headerText}>Messages to review</p>
+        <Box display="flex">
+          <p className={classes.msgNumberText}>{msgPage}</p>
+          <KeyboardArrowRight style={{ color: 'white' }} />
         </Box>
       </Container>
       {/*List of messages*/}
-      
-      <Container>{
-          msgs.map((message) => (
-            <MessageCard rollNumber={ "2019A8PS0666G" } message={ message } date={ "28th Dec 2020, 2:31 a.m." } />
-          ))
-        }</Container>
-        
+      <Container>
+        {msgs.map((message) => (
+          <MessageCard
+            rollNumber={'2019A8PS0666G'}
+            message={message}
+            date={'28th Dec 2020, 2:31 a.m.'}
+          />
+        ))}
+      </Container>
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default Dashboard;

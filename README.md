@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+<img width="100" alt="portfolio_view" src="https://devsoc.club/assets/img/logo.png">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# JoGW Web Portal
 
-## Available Scripts
+![version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-In the project directory, you can run:
+## About
+Joy of Giving Week is an event organised by BITS Goa Nirman Chapter. Students of BITS Goa send anonymous messages to their friends and spread positivity all around. This year due to Covid-19, we're going online to celebrate the Joy of Giving Week! We're unstoppable!
 
-### `yarn start`
+## Table of Contents
+- [Quick Start :boom:](#quick-start)
+- [Documentation 🧾](#documentation)
+- [Browser Support 🌐](#browser-support)
+- [Installation 🐣](#installation)
+- [Starting the app](#starting-the-app)
+- [Contribution Guidelines ✒](#contribution-guidelines)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Quick Start
+This is the web portal for the Joy of Giving Week event.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Documentation
 
-### `yarn test`
+## Browser Support
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
+| --- | --- | --- | --- | --- |
+| Edge | last 3 versions | last 3 versions | last 3 versions | last 3 versions |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `yarn build`
+Follow these steps to install this project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+# clone the repo
+$ git clone https://github.com/Aviral09/JoGW.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# go into app's directory:
+$ cd myproject
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `yarn eject`
+## Starting the app
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Follow these steps to run the app on your local machine:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+# go into app's directory:
+$ cd myproject
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# start the backed server
+$ node server
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## in a new terminal, start the react app
+$ npm run start
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contribution Guidelines
+1. **Fork** the repo on GitHub.
+2. **Clone** the project to your own machine.
+3. **Commit** changes to your own branch.
+4. **Push** your work back up to your fork.
+5. **Submit** a pull request.
+(Make sure you *merge* before you make a pull request!)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Pull Request Guidelines
+1. The subject should be a short one line summary of the change you've made.
+2. The extended description should include a deatiled description of the changes you've made and also a list of all the files you've made changes in.
+3. One pull request should cater to only one change. *A change may include multiple file changes that are essential to solving the issue/change.
 
-### Code Splitting
+### Social Media
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Instagram: <https://www.instagram.com/devsocbitsgoa>
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Devsoc's Website: <https://devsoc.club/>

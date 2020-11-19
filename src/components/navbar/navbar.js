@@ -3,11 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
-import Grid from '@material-ui/core/Grid'; 
+import Grid from '@material-ui/core/Grid';
 import { IconButton } from '@material-ui/core';
+import Notifs from '../Popups/notifs';
+import Profile from '../Popups/profile';
+import AdminCards from '../admincards/admincards';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,39 +18,38 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(2),
   },
   appBar: {
-    backgroundColor: "grey",
-    zIndex: 1
+    backgroundColor: 'grey',
+    zIndex: 1,
   },
   title: {
-    textAlign: "center",
+    textAlign: 'center',
   },
   menuButton: {
     marginLeft: theme.spacing(2),
     marginTop: theme.spacing(0.5),
-    float: "right",
-    width: "2rem",
-    height: "2rem",
+    float: 'right',
+    width: '2rem',
+    height: '2rem',
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-  margin:{
-    borderBottom: "3px solid green"
+  margin: {
+    borderBottom: '3px solid green',
   },
   card: {
-    backgroundColor: ' #E7B8B8'
+    backgroundColor: ' #E7B8B8',
   },
-  margi:{
-    borderBottom: "3px solid purple"
+  margi: {
+    borderBottom: '3px solid purple',
   },
-
 }));
 
-export default function Navbar ({ navHeading },props)  {
+export default function Navbar({ navHeading }, props) {
   const classes = useStyles();
   if (navHeading == null) {
-    navHeading = "DashBoard";
+    navHeading = 'DashBoard';
   }
   return (
     <React.Fragment>
@@ -56,18 +57,21 @@ export default function Navbar ({ navHeading },props)  {
         <Toolbar>
           <Grid container>
             <Grid item xs>
-              <Typography variant="h4" edge='start'><b>JoGW</b></Typography>
+              <Typography variant="h4" edge="start">
+                <b>JoGW</b>
+              </Typography>
             </Grid>
             <Grid item xs>
-              <Typography className={classes.title} variant="h4"><b>{navHeading}</b></Typography>
+              <Typography className={classes.title} variant="h4">
+                <b>{navHeading}</b>
+              </Typography>
             </Grid>
-            <Grid item xs alignContent='flex-end'>
-              <IconButton className={classes.menuButton}>
-                <AccountCircleRoundedIcon />
-              </IconButton>
-              <IconButton className={classes.menuButton}>
-                <NotificationsActiveIcon />
-              </IconButton>
+            <Grid item xs alignContent="flex-end">
+              <Profile />
+
+              {/* <IconButton className={classes.menuButton}><NotificationsActiveIcon  /></IconButton> */}
+              <Notifs />
+
               <IconButton className={classes.menuButton}>
                 <SearchIcon />
               </IconButton>
@@ -75,8 +79,7 @@ export default function Navbar ({ navHeading },props)  {
           </Grid>
         </Toolbar>
       </AppBar>
-      <Toolbar id="back-to-top-anchor" />    
+      <Toolbar id="back-to-top-anchor" />
     </React.Fragment>
   );
 }
-

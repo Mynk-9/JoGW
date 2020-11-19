@@ -10,13 +10,13 @@ import './App.css';
 import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
 import MessageCard from './components/core/MessageCard';
-import Personal from "./components/personal/personal";
-import Navbar from "./components/navbar/navbar";
-import CoreDashboard from "./components/core/CoreDashboard";
+import Personal from './components/personal/personal';
+import Navbar from './components/navbar/navbar';
+import CoreDashboard from './components/core/CoreDashboard';
 
 function App() {
   return (
-  /*  <Router>
+    /*  <Router>
       <Switch>
         <Route exact path="/home" component={Logout} />
         <Route exact path="/" component={Login} />
@@ -25,7 +25,7 @@ function App() {
       </Switch>
   </Router>*/
     <div>
-      <Personal/>
+      <Personal />
     </div>
     // <div className='App'>
     // 	<Login />
@@ -33,7 +33,5 @@ function App() {
     // </div>
   );
 }
-
-
 
 export default App;

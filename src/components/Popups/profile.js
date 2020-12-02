@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const name = 'Nipun Gupta';
 
-export default function Profile() {
+export default function Profile({ name, bitsId }) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -46,6 +46,11 @@ export default function Profile() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    location.replace('/');
   };
 
   const open = Boolean(anchorEl);
@@ -77,9 +82,9 @@ export default function Profile() {
         <List className={classes.root}>
           <ListItem>
             <ListItemAvatar>
-              <Avatar className={classes.orange}>N</Avatar>
+              <Avatar alt={name} className={classes.orange} />
             </ListItemAvatar>
-            <ListItemText primary={name} secondary="2019B1PS1000G" />
+            <ListItemText primary={name} secondary={bitsId} />
           </ListItem>
           <Divider variant="inset" component="li" />
           <ListItem button>
@@ -87,7 +92,11 @@ export default function Profile() {
           </ListItem>
           <Divider />
           <ListItem button>
-            <ListItemText className={classes.typography} primary="Logout" />
+            <ListItemText
+              className={classes.typography}
+              primary="Logout"
+              onClick={handleLogout}
+            />
           </ListItem>
         </List>
         {/* <Typography className={classes.typography}>New notifications</Typography> */}

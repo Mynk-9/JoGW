@@ -5,6 +5,8 @@ const rl = require('readline').createInterface({
   output: process.stdout,
 });
 
+require('dotenv').config();
+
 function input(question) {
   return new Promise((resolve, reject) => {
     rl.question(question, (answer) => {

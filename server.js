@@ -4,11 +4,11 @@ const bodyparser = require('body-parser');
 const fs = require('fs');
 const servePage = require('./util/servePage');
 
-// Connection to database
-require('./dbconfig/connect')();
-
 // Development environment variables
 require('dotenv').config();
+
+// Connection to database
+require('./dbconfig/connect')();
 
 // Middleware
 const app = express();
@@ -40,9 +40,15 @@ app.get('/', async (req, res, next) => {
 
 //Routers
 const userRouter = require('./api/userRouter.js');
+const level0Router = require('./api/level0Router.js');
+const level1Router = require('./api/level1Router.js');
+const level2Router = require('./api/level2Router');
 
 // APIs
 app.use('/api/user', userRouter);
+app.use('/api/level0', level0Router);
+app.use('/api/level1', level1Router);
+app.use('/api/level2', level2Router);
 
 // 404 Handler
 app.use((req, res, next) => {
@@ -53,14 +59,7 @@ app.use((req, res, next) => {
 
 // Final error handler
 app.use(async (err, req, res, next) => {
-  if (err.status === 404) {
-    // insert path to 404 page here
-    servePage(res, 'path to 404 page');
-    return;
-  }
-
   console.log(err);
-
   res.status(err.status || 500).json({
     error: err.message,
   });

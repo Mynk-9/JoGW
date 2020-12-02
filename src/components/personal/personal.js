@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Personal(props) {
+export default function Personal({ name, bitsId }, props) {
   const classes = useStyles();
   var det = [
     'Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called. ',
@@ -129,7 +129,7 @@ export default function Personal(props) {
   return (
     <React.Fragment>
       {/*Nav bar*/}
-      <Navbar navHeading="Dashboard" />
+      <Navbar navHeading="Dashboard" name={name} bitsId={bitsId} />
       {/*Inbox and sent buttons*/}
       <Box textAlign="center">
         <Button size="medium" className={classes.margin}>

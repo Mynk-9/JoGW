@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Navbar({ navHeading }, props) {
+export default function Navbar({ navHeading, name, bitsId }) {
   const classes = useStyles();
   if (navHeading == null) {
     navHeading = 'DashBoard';
@@ -67,7 +67,7 @@ export default function Navbar({ navHeading }, props) {
               </Typography>
             </Grid>
             <Grid item xs alignContent="flex-end">
-              <Profile />
+              <Profile name={name} bitsId={bitsId} />
 
               {/* <IconButton className={classes.menuButton}><NotificationsActiveIcon  /></IconButton> */}
               <Notifs />

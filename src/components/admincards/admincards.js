@@ -6,7 +6,7 @@ import Navbar from '../navbar/navbar';
 import Button from '@material-ui/core/Button';
 import '../personal/personal.css';
 import AdminMessageCard from './messageadmincard';
-import AssignCoreMembersPopup from '../Popups/AssignCoreMembersPopup';
+import AssignCoreMembersPopup from './../popups/AssignCoreMembersPopup';
 
 const useStyles = makeStyles((theme) => ({
   margi: {

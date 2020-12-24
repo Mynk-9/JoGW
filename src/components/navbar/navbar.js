@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
-import Notifs from '../Popups/notifs';
-import Profile from '../Popups/profile';
-import Search from '../Popups/search';
+import Notifs from '../popups/notifs';
+import Profile from '../popups/profile';
+import Search from '../popups/search';
 import '../navbar/navbar.css';
 
 const useStyles = makeStyles((theme) => ({

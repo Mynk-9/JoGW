@@ -1,14 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import { IconButton } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
+import './search.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     float: 'right',
     width: '2rem',
     height: '2rem',
+    paddingRight: '37px',
   },
 }));
 
@@ -47,7 +47,7 @@ export default function Notifs() {
   return (
     <div>
       <IconButton className={classes.menuButton} onClick={handleClick}>
-        <NotificationsActiveIcon />
+        <NotificationsActiveIcon style={{}} className="dussi" />
       </IconButton>
 
       {/* <Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>

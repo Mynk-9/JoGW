@@ -1,16 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import { IconButton } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
+import './search.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     float: 'right',
     width: '2rem',
     height: '2rem',
+    paddingRight: '27px',
   },
   orange: {
     color: theme.palette.getContrastText('#aa11ff'),
@@ -59,7 +59,7 @@ export default function Profile({ name, bitsId }) {
   return (
     <div>
       <IconButton className={classes.menuButton} onClick={handleClick}>
-        <AccountCircleRoundedIcon />
+        <AccountCircleRoundedIcon className="dussi" />
       </IconButton>
 
       {/* <Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>

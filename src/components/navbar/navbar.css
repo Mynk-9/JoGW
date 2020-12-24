@@ -1,3 +1,47 @@
 .tera{
-    transform: scale(2.89);
+    transform: scale(4);
 }
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+.trux{
+    font-family: 'Oxygen';
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+
+}
+
+.trux1{
+    font-family: 'Oxygen';
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 6px;
+}
+
+@media only screen and (max-height: 800px) and (min-height: 700px) and (max-width: 1350px) and (min-width: 1110px){
+    .trux{
+        font-family: 'Oxygen';
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 57px;
+        margin-top: 10px;
+    }
+    
+    .trux1{
+        font-family: 'Oxygen';
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 57px;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+

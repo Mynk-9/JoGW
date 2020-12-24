@@ -2,14 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import Grid from '@material-ui/core/Grid';
-import { IconButton } from '@material-ui/core';
 import Notifs from '../Popups/notifs';
 import Profile from '../Popups/profile';
-import AdminCards from '../admincards/admincards';
+import Search from '../Popups/search';
+import '../navbar/navbar.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,18 +15,11 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(2),
   },
   appBar: {
-    backgroundColor: 'grey',
+    backgroundColor: '#EF4646',
     zIndex: 1,
   },
   title: {
     textAlign: 'center',
-  },
-  menuButton: {
-    marginLeft: theme.spacing(2),
-    marginTop: theme.spacing(0.5),
-    float: 'right',
-    width: '2rem',
-    height: '2rem',
   },
   content: {
     flexGrow: 1,
@@ -43,6 +33,11 @@ const useStyles = makeStyles((theme) => ({
   },
   margi: {
     borderBottom: '3px solid purple',
+    borderRadius: '50px',
+  },
+  top: {
+    marginTop: '17px',
+    padding: '4px',
   },
 }));
 
@@ -55,26 +50,32 @@ export default function Navbar({ navHeading, name, bitsId }) {
     <React.Fragment>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Grid container>
-            <Grid item xs>
-              <Typography variant="h4" edge="start">
-                <b>JoGW</b>
-              </Typography>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+          >
+            <Grid item xs sm md={4} lg={4}>
+              <div className="trux">JoGW</div>
             </Grid>
-            <Grid item xs>
-              <Typography className={classes.title} variant="h4">
-                <b>{navHeading}</b>
-              </Typography>
+            <Grid item xs sm md={4} lg={4}>
+              <div className="trux1">{navHeading}</div>
             </Grid>
-            <Grid item xs alignContent="flex-end">
+            <Grid
+              item
+              xs
+              sm
+              md={4}
+              lg={4}
+              alignContent="flex-end"
+              className={classes.top}
+            >
               <Profile name={name} bitsId={bitsId} />
 
               {/* <IconButton className={classes.menuButton}><NotificationsActiveIcon  /></IconButton> */}
               <Notifs />
-
-              <IconButton className={classes.menuButton}>
-                <SearchIcon />
-              </IconButton>
+              <Search />
             </Grid>
           </Grid>
         </Toolbar>

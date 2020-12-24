@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   CardActions,
@@ -6,35 +6,31 @@ import {
   CardHeader,
   IconButton,
   makeStyles,
+  Snackbar,
 } from '@material-ui/core';
-import {
-  FlagOutlined,
-  ThumbDownOutlined,
-  ThumbUpOutlined,
-} from '@material-ui/icons';
+import { CancelRounded, CheckCircleRounded } from '@material-ui/icons';
+import ShowMoreText from 'react-show-more-text';
 
 const useStyles = makeStyles((theme) => ({
   msgCard: {
     padding: '15px',
-    marginTop: '15px',
-    backgroundColor: '#E2E2E2',
+    marginTop: '20px',
+    backgroundColor: '#FFD94D',
   },
   cardHeaderRollNum: {
-    fontSize: '17px',
+    fontSize: '20px',
+    fontFamily: 'Oxygen, sans-serif',
     fontWeight: '700',
     padding: 0,
     marginTop: '10px',
   },
   cardContent: {
-    '&:last-child': {
-      padding: 0,
-    },
     padding: 0,
     margin: 0,
     overflow: 'hidden',
-    display: '-webkit-box',
-    lineClamp: 3,
-    boxOrient: 'vertical',
+    fontFamily: 'Raleway, sans-serif',
+    fontSize: '17px',
+    fontWeight: '400',
   },
   cardFooter: {
     display: 'flex',
@@ -43,47 +39,107 @@ const useStyles = makeStyles((theme) => ({
   },
   date: {
     margin: '20px 15px 0 0',
+    fontStyle: 'italic',
+    fontSize: '17px',
+    fontFamily: 'Roboto. sans-serif',
+  },
+  iconButton: {
+    padding: 0,
+    margin: '5px 10px',
+  },
+  anchorClass: {
+    textDecoration: 'none',
+    '&:link': {
+      fontSize: '17px',
+    },
   },
 }));
 
 const MessageCard = ({ rollNumber, message, date }) => {
   const classes = useStyles();
-  if (rollNumber == null) {
-    rollNumber = '2019A8PS0666G';
-    date = '28th Dec 2020, 2:31 a.m.';
-  }
-  return (
+  // State variables
+  const [open, setOpen] = useState(false);
+  const [text, setText] = useState('');
+  const [status, setStatus] = useState('');
+  // click handlers
+  const handleClick = (msg) => {
+    setOpen(true);
+    setText('This message has been' + msg);
+    setStatus(msg);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleStatus = () => {
+    if (status === 'accepted') return 'inset -7px 0 0 0 #00CF53';
+    else if (status === 'rejected') return 'inset -7px 0 0 0 #EF4646';
+    else return;
+  };
+  // button react fragment
+  const buttons = (
     <React.Fragment>
-      <Card className={classes.msgCard}>
-        <CardHeader
-          title={'To: ' + rollNumber}
-          className={classes.cardHeaderRollNum}
-          titleTypographyProps={{
-            variant: 'paragraph',
+      <IconButton
+        classes={{ root: classes.iconButton }}
+        onClick={() => handleClick('accepted')}
+      >
+        <CheckCircleRounded
+          style={{
+            color: '#00CF53',
+            fontSize: '45px',
           }}
         />
-        <CardContent
-          className={classes.cardContent}
-          pb={0}
-          component="p"
-          children={message}
+      </IconButton>
+      <IconButton
+        classes={{ root: classes.iconButton }}
+        onClick={() => handleClick('rejected')}
+      >
+        <CancelRounded
+          style={{
+            color: '#EF4646',
+            fontSize: '45px',
+          }}
         />
-        <div className={classes.cardFooter}>
-          <CardActions disableSpacing>
-            <IconButton>
-              <ThumbUpOutlined />
-            </IconButton>
-            <IconButton>
-              <ThumbDownOutlined />
-            </IconButton>
-            <IconButton>
-              <FlagOutlined />
-            </IconButton>
-          </CardActions>
-          <p className={classes.date}>{date}</p>
-        </div>
-      </Card>
+      </IconButton>
     </React.Fragment>
+  );
+  // complete component
+  return (
+    <Card
+      className={classes.msgCard}
+      style={{ boxShadow: handleStatus() }}
+      raised={true}
+    >
+      <CardHeader
+        title={'To: ' + rollNumber}
+        className={classes.cardHeaderRollNum}
+        titleTypographyProps={{
+          variant: 'paragraph',
+        }}
+      />
+      <div>
+        <ShowMoreText
+          lines={3}
+          more="Show more"
+          less="Show less"
+          expanded={false}
+          anchorClass={classes.anchorClass}
+          className={classes.cardContent}
+        >
+          <p>{message}</p>
+        </ShowMoreText>
+        <div className={classes.cardFooter}>
+          <p className={classes.date}>{date}</p>
+          <CardActions disableSpacing>{buttons}</CardActions>
+        </div>
+      </div>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={open}
+        onClose={() => setTimeout(handleClose, 1000)}
+        message={text}
+        key={text}
+      />
+    </Card>
   );
 };
 
